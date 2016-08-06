@@ -1,0 +1,23 @@
+%p#notice= notice
+%p
+  %strong Firstname:
+  = @registrant.firstname
+%p
+  %strong Lastname:
+  = @registrant.lastname
+%p
+  %strong Email:
+  = @registrant.email
+%p
+  %strong Contactno:
+  = @registrant.contactno
+%p
+  %strong Batch:
+  = @registrant.batch
+%p
+  %strong Course:
+  = @registrant.course
+%p
+  %strong Referral:
+  = @registrant.referral
+= link_to 'Back', registrants_path

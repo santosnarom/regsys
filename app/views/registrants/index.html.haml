@@ -1,0 +1,19 @@
+%p#notice= notice
+%h1 regsys
+
+= link_to 'Export to CSV', new_registrant_path
+= link_to 'Open Form', new_registrant_path
+
+%h4= "Registrant count: " + @registrants.count.to_s
+%table
+  %thead
+    %tr
+      %th Firstname
+      %th Lastname
+  %tbody
+    - @registrants.each do |registrant|
+      %tr
+        %td= registrant.firstname
+        %td= registrant.lastname
+        %td= link_to 'Show', registrant
+        %td= link_to 'Destroy', registrant, method: :delete, "data confirm": 'Are you sure?'
