@@ -1,24 +1,9 @@
-# README
+# regsys
+A simple registration system
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
+  * Ruby 2.3.1
+  * Rails 5.0.0
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Running the App
+  * Install the gems via 'bundle install' before starting rails server
