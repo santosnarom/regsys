@@ -28,7 +28,7 @@ class RegistrantsController < ApplicationController
 
     respond_to do |format|
       if @registrant.save
-        format.html { redirect_to @registrant, notice: 'Registrant was successfully created.' }
+        format.html { redirect_to new_registrant_path, notice: 'You have successfully registered' }
         format.json { render :show, status: :created, location: @registrant }
       else
         format.html { render :new }
@@ -55,6 +55,14 @@ class RegistrantsController < ApplicationController
   # DELETE /registrants/1.json
   def destroy
     @registrant.destroy
+    respond_to do |format|
+      format.html { redirect_to registrants_url, notice: 'Registrant was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def drop
+    Registrant.delete_all
     respond_to do |format|
       format.html { redirect_to registrants_url, notice: 'Registrant was successfully destroyed.' }
       format.json { head :no_content }

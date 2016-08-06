@@ -1,31 +1,26 @@
 = form_for(registrant) do |f|
-  - if registrant.errors.any?
-    %h2
-      = pluralize(registrant.errors.count, "error")
-      | prohibited this registrant from being saved:
-    %ul
-      - registrant.errors.full_messages.each do |message|
-        %li= message
-  .field
-    = f.label "First name"
-    = f.text_field :firstname, :required => ""
-  .field
-    = f.label "Last name"
-    = f.text_field :lastname, :required => ""
-  .field
-    = f.label "Email"
-    = f.email_field :email, :required => ""
-  .field
-    = f.label "Contact no"
-    = f.text_field :contactno, :required => ""
-  .field
-    = f.label "Batch"
-    = f.number_field :batch, :required => "", :min => 2010, :max => 2016
-  .field
-    = f.label "Course"
-    = f.text_field :course, :required => ""
-  .field
-    = f.label "Referral"
-    = f.text_field :referral
-  .actions
-    = f.submit "Submit"
+  .ui.form
+    .field
+      = f.label "Name"
+      .two.fields
+        .field
+          = f.text_field :firstname,  :placeholder => "First name"
+        .field
+          = f.text_field :lastname,  :placeholder => "Last name"
+    .field
+      = f.label "Email"
+      = f.email_field :email,  :placeholder => "email@domain.com"
+    .field
+      = f.label "Contact no."
+      = f.text_field :contactno,  :placeholder => "09XXXXXXXXX"
+    .field
+      = f.label "Batch"
+      = f.number_field :batch,  :min => 2010, :max => 2016, :placeholder => "20XX"
+    .field
+      = f.label "Course"
+      = f.text_field :course,  :placeholder => "BSCS"
+    .field
+      = f.label "Referral"
+      = f.text_field :referral, :placeholder => "N/A"
+    .actions
+      = f.submit "Submit", :class => "ui blue button"

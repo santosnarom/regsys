@@ -1,2 +1,14 @@
-%h1 Registration Form
-= render 'form', registrant: @registrant
+.ui.container
+  .ui.four.column.centered.grid
+    .row
+      %h1 Registration Form
+    .row.left.floated.left.aligned.column
+      = render 'form', registrant: @registrant
+
+- if notice
+  .ui.basic.modal
+    .ui.center.aligned.grid
+      .row
+        %h1= notice
+      .row
+        %i.massive.green.checkmark.icon
