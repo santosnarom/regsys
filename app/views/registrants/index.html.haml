@@ -6,7 +6,7 @@
         .content regsys
     .row
       .six.wide.column
-        = link_to 'Export to CSV', new_registrant_path, {:class => "ui positive button"}
+        = link_to 'Export to CSV', registrants_path(:format => "csv"), {:class => "ui positive button"}
         = link_to 'Open Form', new_registrant_path, {:class => "ui blue button"}
       .right.floated.two.wide.column
         = link_to 'Delete all', drop_path, {:method => :delete, :class => "ui red button", data: { confirm: "Are you sure?"}}

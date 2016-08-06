@@ -5,6 +5,11 @@ class RegistrantsController < ApplicationController
   # GET /registrants.json
   def index
     @registrants = Registrant.all
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @registrants.as_csv }
+    end
   end
 
   # GET /registrants/1
